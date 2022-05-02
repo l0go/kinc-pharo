@@ -4,9 +4,11 @@ Class {
 	#category : #Kinc
 }
 
-{ #category : #'private - initialization' }
+{ #category : #initialization }
 KincTest >> initialize [
-	| value |
-	value := (1 to: 50) atRandom.
-	^value.
+	| working |
+	working := (FileSystem disk workingDirectory / 'vendor').
+	"Check if the last dependency required is cloned"
+	(working / 'kinc' / 'Tools' / 'kmake' / 'kmake') exists
+		ifFalse: [GrabKinc new execute.].
 ]

@@ -9,8 +9,6 @@ GrabKinc >> execute [
 	"Clone everything from git"
 	| working |
 	working := (FileSystem disk workingDirectory / 'vendor').
-	"Inform"
-	self inform: 'Please wait as we download Kinc, it will most likely be frozen'.
 	"Clone Kinc"
 	IceGitClone new
 		location: (working / 'kinc');
