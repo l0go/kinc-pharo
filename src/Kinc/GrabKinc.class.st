@@ -1,3 +1,12 @@
+"
+I am used in order to get Kinc and all of its required dependencies in a way that only gets the required library for each OS.
+I clone from the Main branch of the GitHub repository.
+I am used at the Kinc setup step. 
+Example:
+```
+GrabKinc new execute.
+```
+"
 Class {
 	#name : #GrabKinc,
 	#superclass : #Object,
