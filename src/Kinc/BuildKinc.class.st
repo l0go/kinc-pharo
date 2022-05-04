@@ -15,9 +15,7 @@ Class {
 
 { #category : #execution }
 BuildKinc >> execute [
-	LibC runCommand: 'cd ./vendor/Kinc'.
 	OSPlatform current isWin64
-		ifTrue: [ LibC runCommand: 'make.bat --compile --dynlib'. ]
-		ifFalse: [ LibC runCommand: './make --compile --dynlib'. ].
-	LibC runCommand: 'cd ../../'.
+		ifTrue: [ LibC runCommand: 'cd ./vendor/kinc && make.bat --compile --dynlib'. ]
+		ifFalse: [ LibC runCommand: 'cd ./vendor/kinc && ./make --compile --dynlib'. ].
 ]
